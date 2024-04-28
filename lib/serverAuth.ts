@@ -7,22 +7,20 @@ const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
         const session = await getSession({ req });
 
         if (!session?.user?.email) {
-            throw new Error("Not signed in");
+            return res.status(401).json({ error: "Not signed in" });
         }
-
         const currentUser = await prismadb.user.findUnique({
             where: {
                 email: session.user.email,
             },
         });
-
         if (!currentUser) {
-            throw new Error("User not found");
+            return res.status(401).json({ error: "User not found" });
         }
-
-        res.status(200).json({ currentUser });
-    } catch (error: any) {
-        res.status(400).json({ error: error.message });
+        return res.status(200).json({ currentUser });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Internal server error" });
     }
 };
 
