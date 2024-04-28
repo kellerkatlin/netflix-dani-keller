@@ -19,20 +19,17 @@ export default function Auth() {
         );
     }, []);
     const login = useCallback(async () => {
-        const staticEmail = "daniela@keller.com";
-        const staticPassword = "danielateamo";
-
         try {
             await signIn("credentials", {
-                email: staticEmail,
-                password: staticPassword,
+                email,
+                password,
 
                 callbackUrl: "/profiles",
             });
         } catch (error) {
             console.log(error);
         }
-    }, []);
+    }, [email, password]);
 
     const register = useCallback(async () => {
         try {
