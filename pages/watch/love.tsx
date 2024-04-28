@@ -18,7 +18,7 @@ export default function Love() {
                 />
                 <p className="text-white text-xl md:text-3xl font-bold">
                     <span className="font-light">Mirando: </span>
-                    Historia de amor
+                    Nuestra historia de amor
                 </p>
             </nav>
             <video
