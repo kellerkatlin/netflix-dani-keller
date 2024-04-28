@@ -20,7 +20,7 @@ export default function Billboard() {
                     muted
                     loop
                     src="images/historia.mp4"
-                    poster={data?.thumbnailUrl}
+                    poster="images/historia.mp4"
                 ></video>
                 <video
                     className="w-1/2 object-cover h-[56.25vw] brightness-[60%]"
@@ -28,7 +28,7 @@ export default function Billboard() {
                     muted
                     loop
                     src="images/historia.mp4"
-                    poster={data?.thumbnailUrl}
+                    poster="images/historia.mp4"
                 ></video>
             </div>
 
