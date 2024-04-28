@@ -56,7 +56,7 @@ export default NextAuth({
         }),
     ],
     pages: {
-        signIn: "/",
+        signIn: "/auth",
     },
     debug: false,
     adapter: PrismaAdapter(prismadb),
