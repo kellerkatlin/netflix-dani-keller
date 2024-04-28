@@ -122,7 +122,7 @@ export default function Auth() {
                                 : "¿Ya tienes una cuenta?"}
 
                             <span
-                                // onClick={toggleVariant}
+                                onClick={toggleVariant}
                                 className="text-white ml-1 hover:underline cursor-pointer"
                             >
                                 {variant === "login"
